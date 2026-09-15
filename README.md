@@ -552,7 +552,6 @@ iftop -i lo
 
 **For detailed performance analysis:** See accompanying Performance Analysis Report
 
-**Project Status:** Fully functional and tested  
+**Project Status:** Fully functional and tested
 
-**Last Updated:** October 2025
-**Author:** Ameya Purohit (2025202006)
+**Author:** Ameya Purohit
