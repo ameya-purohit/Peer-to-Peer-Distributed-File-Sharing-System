@@ -18,7 +18,7 @@ This project implements a P2P file sharing ecosystem where multiple tracker serv
 ## Project Structure
 
 ```
-202502006_A3/
+Peer-to-Peer-Distributed-File-Sharing-System/
 ├── client/
 │   ├── client.cpp          # P2P client implementation
 │   ├── Makefile           # Client build configuration
@@ -500,6 +500,17 @@ sudo tcpdump -i lo -n port 6000 -A
 # Monitor bandwidth
 iftop -i lo
 ```
+
+## Assumptions
+
+- All tracker and client machines are reachable over IPv4; no IPv6 support is assumed or implemented.
+- Clients and trackers run on a trusted local network; no malicious peers or man-in-the-middle actors are assumed (see Security Considerations).
+- Each client is publicly reachable at the IP:PORT it registers with the tracker (no NAT traversal is performed).
+- A user is logged into at most one client session at a time system-wide.
+- Group names and usernames are unique across the system.
+- The two trackers are configured with consistent, matching `trackerinfo.txt` files and are reachable from each other for synchronization.
+- Files shared within a group remain accessible at their original path on the seeder's filesystem until `stop_share` is called or the seeder disconnects.
+- Disk space on both client and tracker machines is sufficient for the files being shared/downloaded (up to 1GB per file, as tested).
 
 ## Limitations
 
